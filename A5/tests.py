@@ -14,11 +14,16 @@ class TestLogic(unittest.TestCase):
 
     # TODO: Test all functions from logic.py!
     def test_make_empty_board(self):
-        self.assertEqual(logic.make_empty_board)
+        board = [
+            [None, None, None],
+            [None, None, None],
+            [None, None, None],
+        ]
+        self.assertEqual(logic.make_empty_board(), board)
 
     def test_other_player(self):
         player = 'X'
-        self.assertEqual(logic.other_player(player))
+        self.assertEqual(logic.other_player(player), 'O')
 
 
 if __name__ == '__main__':

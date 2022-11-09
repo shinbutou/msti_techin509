@@ -18,7 +18,10 @@ if __name__ == '__main__':
         try:
             loc = int(input("Please choose which square to take. ")) - 1
         except ValueError:
-            print("Please enter a number: ")
+            loc = int(input("Please enter a number. ")) -1
+
+        if loc < 1 or loc > 9:
+            loc = int(input("Please choose a number from 1 to 9. ")) - 1
 
         if board[loc // 3][loc % 3] != None:
             print("The block is already taken, please choose another one.")

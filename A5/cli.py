@@ -20,7 +20,7 @@ if __name__ == '__main__':
         except ValueError:
             loc = int(input("Please enter a number. ")) -1 # This can only prevent an error once
 
-        if loc < 1 or loc > 9:
+        if loc < 0 or loc > 8:
             loc = int(input("Please choose a number from 1 to 9. ")) - 1 # This can only prevent an error once
 
         if board[loc // 3][loc % 3] != None:
@@ -41,7 +41,7 @@ if __name__ == '__main__':
         result = get_winner(board)
 
         if result == 'X' or result == 'O':
-            print("The winner is " + result[0] + " !")
+            print("The winner is " + result + " !")
             winner = True
         elif result == 'D':
             print("Draw!")

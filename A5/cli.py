@@ -42,5 +42,6 @@ if __name__ == '__main__':
             winner = True
         elif result == 'D':
             print("Draw!")
+            winner = True
         else:
             continue

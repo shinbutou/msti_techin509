@@ -48,7 +48,6 @@ def get_winner(board) -> str:
         for j in range(3):
             check.append(board[i][j])
     
-    print(check)
     if None in set(check):
         print("The game is still on.")
         return None

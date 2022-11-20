@@ -5,13 +5,15 @@
 from logic import *
 
 if __name__ == '__main__':
-    board = make_empty_board()
+
+    game = TicTacToe()
     player, winner, placement = 'X', None, False # 'X' goes first in tic-tac-toe
+
     while winner == None:
         print("Turn for player '" + player + "'")
         
         # TODO: Show the board to the user.
-        for row in board:
+        for row in game.board:
             print(row)
 
         # TODO: Input a move from the player.
@@ -23,22 +25,23 @@ if __name__ == '__main__':
         if loc < 0 or loc > 8:
             loc = int(input("Please choose a number from 1 to 9. ")) - 1 # This can only prevent an error once
 
-        if board[loc // 3][loc % 3] != None:
+        if game.board[loc // 3][loc % 3] != None:
             print("The block is already taken, please choose another one.")
         else:
             placement = True
 
         # TODO: Update the board.
         if placement == True:
-            board[loc // 3][loc % 3] = player
+            game.board[loc // 3][loc % 3] = player
 
         # TODO: Update who's turn it is.
-            player = other_player(player)
+            player = game.other_player(player)
             placement = False
 
 
         # Result
-        result = get_winner(board)
+        result = game.get_winner()
+        print(result)
 
         if result == 'X' or result == 'O':
             print("The winner is " + result + " !")

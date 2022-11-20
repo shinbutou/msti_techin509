@@ -5,33 +5,27 @@
 import pandas as pd # Using pandas for transposing 
 
 class TicTacToe:
-
     board_size = '3*3'
 
     def __init__(self):
         self.board = [
             [None, None, None],
             [None, None, None],
-            [None, None, None],
+            [None, None, None]
         ]
     
-'''
-    def make_empty_board():
-        return [
-            [None, None, None],
-            [None, None, None],
-            [None, None, None],
-        ]
-'''
+    def test(self) -> str:
+        return "print"
 
     def get_winner(self) -> str:
         # Row
         for i in range(3): # if a winner is a achieved in a row
             if len(set(self.board[i])) == 1:
-                return self.board[i][0], 
+                return self.board[i][0]
 
         # Column
-        df = pd.DataFrame(self.board).T.values.tolist() 
+        df = pd.DataFrame(self.board).T.values.tolist()
+        print(df)
         for i in range(3): # if a winner is a achieved in a column (same logic with the original grid transposed)
             if len(set(df[i])) == 1:
                 return df[i][0]
@@ -67,7 +61,7 @@ class TicTacToe:
             return 'D'
 
 
-    def other_player(self.player):
+    def other_player(self, player):
         if player == 'X':
             return 'O'
         else:

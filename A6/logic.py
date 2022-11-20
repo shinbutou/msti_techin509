@@ -24,14 +24,14 @@ class TicTacToe:
         ]
 '''
 
-    def get_winner(board) -> str:
+    def get_winner(self) -> str:
         # Row
         for i in range(3): # if a winner is a achieved in a row
-            if len(set(board[i])) == 1:
-                return board[i][0], 
+            if len(set(self.board[i])) == 1:
+                return self.board[i][0], 
 
         # Column
-        df = pd.DataFrame(board).T.values.tolist() 
+        df = pd.DataFrame(self.board).T.values.tolist() 
         for i in range(3): # if a winner is a achieved in a column (same logic with the original grid transposed)
             if len(set(df[i])) == 1:
                 return df[i][0]
@@ -39,7 +39,7 @@ class TicTacToe:
         # Checking the diagonal from top-left to bottom-right
         i, j, k = 0, 0, []
         for m in range(3):
-            k.append(board[i][j])
+            k.append(self.board[i][j])
             i += 1
             j += 1
         if len(set(k)) == 1:
@@ -48,7 +48,7 @@ class TicTacToe:
         # Checking the diagonal from bottom-left to top-right
         i, j, k = 2, 0, []
         for m in range(3):
-            k.append(board[i][j])
+            k.append(self.board[i][j])
             i -= 1
             j += 1
         if len(set(k)) == 1:
@@ -58,7 +58,7 @@ class TicTacToe:
         check = []
         for i in range(3):
             for j in range(3):
-                check.append(board[i][j])
+                check.append(self.board[i][j])
         
         if None in set(check):
             print("The game is still on.")
@@ -67,7 +67,7 @@ class TicTacToe:
             return 'D'
 
 
-    def other_player(player):
+    def other_player(self.player):
         if player == 'X':
             return 'O'
         else:

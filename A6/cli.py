@@ -41,7 +41,6 @@ if __name__ == '__main__':
 
         # Result
         result = game.get_winner()
-        print(result)
 
         if result == 'X' or result == 'O':
             print("The winner is " + result + " !")

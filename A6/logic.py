@@ -13,9 +13,6 @@ class TicTacToe:
             [None, None, None],
             [None, None, None]
         ]
-    
-    def test(self) -> str:
-        return "print"
 
     def get_winner(self) -> str:
         # Row

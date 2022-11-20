@@ -5,14 +5,24 @@
 import pandas as pd # Using pandas for transposing 
 
 class TicTacToe:
-    '''Game Class'''
+
+    board_size = '3*3'
+
+    def __init__(self):
+        self.board = [
+            [None, None, None],
+            [None, None, None],
+            [None, None, None],
+        ]
+    
+'''
     def make_empty_board():
         return [
             [None, None, None],
             [None, None, None],
             [None, None, None],
         ]
-
+'''
 
     def get_winner(board) -> str:
         # Row

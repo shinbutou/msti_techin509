@@ -38,7 +38,6 @@ if __name__ == '__main__':
             player = game.other_player(player)
             placement = False
 
-
         # Result
         result = game.get_winner()
 

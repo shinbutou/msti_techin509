@@ -2,7 +2,8 @@
 # or output happens here. The logic in this file
 # should be unit-testable.
 
-import pandas as pd # Using pandas for transposing 
+import pandas as pd # Using pandas for transposing
+import random
 
 class TicTacToe:
     board_size = '3*3'

@@ -20,7 +20,7 @@ if __name__ == '__main__':
         try:
             loc = int(input("Please choose which square to take. ")) - 1
         except ValueError:
-            loc = int(input("Please enter a number. ")) -1 # This can only prevent an error once
+            loc = int(input("Please enter a number. ")) - 1 # This can only prevent an error once
 
         if loc < 0 or loc > 8:
             loc = int(input("Please choose a number from 1 to 9. ")) - 1 # This can only prevent an error once

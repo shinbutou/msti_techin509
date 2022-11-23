@@ -64,3 +64,6 @@ class TicTacToe:
             return 'O'
         else:
             return 'X'
+
+    def random_move(self):
+        return random.randint(1, 9)

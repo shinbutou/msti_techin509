@@ -4,4 +4,4 @@ The repository is dedicated to a course at the University of Washington.
 * Course ID: TECHIN509
 * Quarter: Autumn 2022
 
-The mandatory course explores the fundamentals of Python again. Throughout the quarter, various challenges that were previously postponed
+The mandatory course explores the fundamentals of Python again. Throughout the quarter, various challenges that were previously postponed were addressed

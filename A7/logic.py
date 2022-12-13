@@ -6,14 +6,15 @@ import pandas as pd # Using pandas for transposing
 import random
 
 class TicTacToe:
-    board_size = '3*3'
+    board_slots = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-    def __init__(self):
+    def __init__(self, mode):
         self.board = [
             [None, None, None],
             [None, None, None],
             [None, None, None]
         ]
+        self.mode = mode
 
     def get_winner(self) -> str:
         # Row
@@ -23,7 +24,6 @@ class TicTacToe:
 
         # Column
         df = pd.DataFrame(self.board).T.values.tolist()
-        print(df)
         for i in range(3): # if a winner is a achieved in a column (same logic with the original grid transposed)
             if len(set(df[i])) == 1:
                 return df[i][0]
@@ -66,4 +66,8 @@ class TicTacToe:
             return 'X'
 
     def random_move(self):
-        return random.randint(1, 9)
+        index = random.randint(0, len(self.board_slots) - 1)
+        result = self.board_slots[index]
+        self.board_slots.remove(result)
+        result -= 1
+        self.board[result // 3][result % 3] = 'O'

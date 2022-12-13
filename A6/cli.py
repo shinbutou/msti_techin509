@@ -6,8 +6,10 @@ from logic import *
 
 if __name__ == '__main__':
 
-    game = TicTacToe()
     player, winner, placement = 'X', None, False # 'X' goes first in tic-tac-toe
+
+    mode = str(input("[1] for Single Player Mode, [2] for Two Player Mode")
+    game = TicTacToe(mode)
 
     while winner == None:
         print("Turn for player '" + player + "'")

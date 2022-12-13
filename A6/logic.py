@@ -6,14 +6,15 @@ import pandas as pd # Using pandas for transposing
 import random
 
 class TicTacToe:
-    board_size = '3*3'
+    board_slots = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-    def __init__(self):
+    def __init__(self, mode):
         self.board = [
             [None, None, None],
             [None, None, None],
             [None, None, None]
         ]
+        self.mode = mode
 
     def get_winner(self) -> str:
         # Row
@@ -66,4 +67,7 @@ class TicTacToe:
             return 'X'
 
     def random_move(self):
-        return random.randint(1, 9)
+        index = random.randint(0, len(board_slots) - 1)
+        result = board_slots[index]
+        board_slots.remove(board_slots[index])
+        return result

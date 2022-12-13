@@ -8,7 +8,7 @@ if __name__ == '__main__':
 
     player, winner, placement = 'X', None, False # 'X' goes first in tic-tac-toe
 
-    mode = str(input("[1] for Single Player Mode, [2] for Two Player Mode")
+    mode = str(input("[1] for Single Player Mode, [2] for Two Player Mode. "))
     game = TicTacToe(mode)
 
     while winner == None:
@@ -35,10 +35,15 @@ if __name__ == '__main__':
         # TODO: Update the board.
         if placement == True:
             game.board[loc // 3][loc % 3] = player
+            game.board_slots.remove(loc + 1)
+            result = game.get_winner()
 
         # TODO: Update who's turn it is.
+        if game.mode == '2':
             player = game.other_player(player)
             placement = False
+        elif game.mode == '1' and len(game.board_slots) != 0: # Or ask the computer to finish its turn on a random block
+            game.random_move()
 
         # Result
         result = game.get_winner()

@@ -24,7 +24,6 @@ class TicTacToe:
 
         # Column
         df = pd.DataFrame(self.board).T.values.tolist()
-        print(df)
         for i in range(3): # if a winner is a achieved in a column (same logic with the original grid transposed)
             if len(set(df[i])) == 1:
                 return df[i][0]
@@ -67,7 +66,8 @@ class TicTacToe:
             return 'X'
 
     def random_move(self):
-        index = random.randint(0, len(board_slots) - 1)
-        result = board_slots[index]
-        board_slots.remove(board_slots[index])
-        return result
+        index = random.randint(0, len(self.board_slots) - 1)
+        result = self.board_slots[index]
+        self.board_slots.remove(result)
+        result -= 1
+        self.board[result // 3][result % 3] = 'O'

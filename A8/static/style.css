@@ -1,0 +1,18 @@
+.board {
+    border-collapse: collapse;
+    font-size: 22px;
+}
+
+.odd {
+    background-color: lightgray;
+}
+
+.even {
+    background-color: gray;
+}
+
+.odd, .even {
+    width: 75px;
+    height: 75px;
+    text-align: center;
+}

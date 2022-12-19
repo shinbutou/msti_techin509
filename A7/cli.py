@@ -4,6 +4,8 @@
 
 from logic import *
 
+df = pd.read_csv('./database.csv')
+
 if __name__ == '__main__':
 
     player, winner, placement = 'X', None, False # 'X' goes first in tic-tac-toe
@@ -47,12 +49,18 @@ if __name__ == '__main__':
 
         # Result
         result = game.get_winner()
+            
+        if result != None:
+            df.loc[len(df.index)] = [int(game.mode), result]
+            df.to_csv('./database.csv', index=False) # Record the game
+            winning_times = df['result'].value_counts().tolist()[df['result'].value_counts().keys().tolist().index(result)]
+            winning_rate = winning_times / len(df) * 100 # Calculate and display relevant statistics
 
-        if result == 'X' or result == 'O':
-            print("The winner is " + result + " !")
-            winner = True
-        elif result == 'D':
-            print("Draw!")
-            winner = True
+            if result == 'X' or result == 'O':
+                print("The winner is " + result + " ! The current winning rate is " + str(round(winning_rate, 2)) + " %.") 
+                winner = True
+            elif result == 'D':
+                print(f"Draw! This only happens {winning_rate}% of the time.") 
+                winner = True
         else:
             continue

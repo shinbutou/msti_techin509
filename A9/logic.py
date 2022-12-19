@@ -17,7 +17,6 @@ class TicTacToe:
         self.mode = mode
 
     def get_winner(self) -> str:
-        print(self.board)
         # Row
         for i in range(3): # if a winner is a achieved in a row
             if len(set(self.board[i])) == 1:

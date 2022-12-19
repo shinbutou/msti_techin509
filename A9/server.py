@@ -59,7 +59,6 @@ def game():
 
         # Result
         result = game.get_winner()
-        print(result)
             
         if result != None:
             df.loc[len(df.index)] = [int(game.mode), result]

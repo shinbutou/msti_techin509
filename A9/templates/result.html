@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./static/style.css">
+    <title>Tic-Tac-Toe: Home</title>
+</head>
+
+<body>
+    <center>
+        <h1>
+            <b>Tic-Tac-Toe</b>
+        </h1>
+        {% if session.get('result') == 'D' %}
+            <p>
+                <b>Draw</b>! This only happens {{ winning_rate }}% of the time.<br>
+                If you want to see more statistics, you can click this <a href="/stats">link</a>. 
+            </p>
+        {% else %}
+            <p>
+                The winner is <b>{{ result }}</b>! The current winning rate is {{ winning_rate }}%.<br>
+                If you want to see more statistics, you can click this <a href="/stats">link</a>.
+            </p>
+        {% endif %}
+    </center>
+</body>
+
+</html>

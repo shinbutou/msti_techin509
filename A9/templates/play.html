@@ -13,26 +13,26 @@
         </h1>
         <table class="board">
             <tr>
-                <th class="odd">{{ board[0] }}</th>
-                <th class="even">{{ board[1] }}</th>
-                <th class="odd">{{ board[2] }}</th>
+                <th class="odd">{{ board[0][0] }}</th>
+                <th class="even">{{ board[0][1] }}</th>
+                <th class="odd">{{ board[0][2] }}</th>
             </tr>
             <tr>
-                <th class="even">{{ board[3] }}</th>
-                <th class="odd">{{ board[4] }}</th>
-                <th class="even">{{ board[5] }}</th>
+                <th class="even">{{ board[1][0] }}</th>
+                <th class="odd">{{ board[1][1] }}</th>
+                <th class="even">{{ board[1][2] }}</th>
             </tr>
             <tr>
-                <th class="odd">{{ board[6] }}</th>
-                <th class="even">{{ board[7] }}</th>
-                <th class="odd">{{ board[8] }}</th>
+                <th class="odd">{{ board[2][0] }}</th>
+                <th class="even">{{ board[2][1] }}</th>
+                <th class="odd">{{ board[2][2] }}</th>
             </tr>
         </table>
         <br>
         <form action="/play" method="POST">
-            <label><b>Turn for Player {{ player }}! Please choose a block of your desire.</b><br>
-                <input mode="loc"/><button type="submit">Go!</button>
-            </label>
+            <label><b>Turn for Player {{ player }}! Please choose a block of your desire. </b></label>
+            <input type="number" name="loc" min="1" max="9"/>
+            <button type="submit">Go!</button>
         </form>
     </center>
 {% endblock %}
